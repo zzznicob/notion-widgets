@@ -110,8 +110,6 @@
           document.getElementById('signout_button').style.visibility = 'visible';
           document.getElementById('authorize_button').innerText = 'Refresh';
           await listUpcomingEvents();
-
-        
         };
 
         if (gapi.client.getToken() === null) {
@@ -174,7 +172,23 @@
 
       // add event
 
-      function createEvent() {
+      function initClient() {
+   gapi.client.init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+      scope: SCOPES
+   }).then(function () {
+      createEventButton.style.display = 'block';
+      createEventButton.onclick = handleCreateEventClick;
+   });
+}
+
+function handleCreateEventClick() {
+   gapi.auth2.getAuthInstance().signIn().then(createEvent);
+}
+
+function createEvent() {
    var eventDetails = {
       'summary': document.getElementById('event-summary').value,
       'description': document.getElementById('event-description').value,
@@ -195,14 +209,6 @@
       console.log('Event created: ' + response.result.htmlLink);
    });
 }
-
-function handleAuthClick() {
-   gapi.auth2.getAuthInstance().signIn().then(function () {
-      createEventButton.style.display = 'block'; // Show the button after authorization
-      createEventButton.onclick = createEvent;
-   });
-}
-
 
 
         function updateClock() {
