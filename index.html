@@ -164,6 +164,21 @@ limitations under the License.
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
+
+        function updateClock() {
+  const now = new Date();
+  
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+  const formattedDate = now.toLocaleDateString(undefined, options);
+  
+  document.getElementById('clock').textContent = formattedDate;
+}
+
+// Initial call to update the clock
+updateClock();
+
+// Update the clock every second
+setInterval(updateClock, 1000);
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
