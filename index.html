@@ -194,6 +194,13 @@
    });
 }
 
+function handleAuthClick() {
+   gapi.auth2.getAuthInstance().signIn().then(function () {
+      createEventButton.style.display = 'block'; // Show the button after authorization
+      createEventButton.onclick = createEvent;
+   });
+}
+
 
 
         function updateClock() {
