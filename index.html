@@ -155,6 +155,29 @@
         document.getElementById('content').innerText = output;
       }
 
+      // add event
+
+      function createEvent() {
+    var event = {
+      'summary': 'Event Summary',
+      'description': 'Event Description',
+      'start': {
+        'dateTime': '2023-08-28T10:00:00',
+        'timeZone': 'YOUR_TIMEZONE'
+      },
+      'end': {
+        'dateTime': '2023-08-28T12:00:00',
+        'timeZone': 'YOUR_TIMEZONE'
+      }
+    };
+
+    gapi.client.calendar.events.insert({
+      'calendarId': 'primary',
+      'resource': event
+    }).then(function(response) {
+      console.log('Event created: ' + response.result.htmlLink);
+    });
+  }
 
 
         function updateClock() {
