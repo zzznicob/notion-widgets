@@ -12,12 +12,27 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
-    
+
+    <label for="event-summary">Event Summary:</label>
+   <input type="text" id="event-summary" required><br><br>
+
+   <label for="event-description">Event Description:</label>
+   <textarea id="event-description" rows="4"></textarea><br><br>
+
+   <label for="start-date">Start Date:</label>
+   <input type="datetime-local" id="start-date" required><br><br>
+
+   <label for="end-date">End Date:</label>
+   <input type="datetime-local" id="end-date" required><br><br>
+
+    <button id="create-event-button" style="display: none;">Create Event</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
     
-      
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
     <script type="text/javascript">
       /* exported gapiLoaded */
       /* exported gisLoaded */
@@ -158,26 +173,27 @@
       // add event
 
       function createEvent() {
-    var event = {
-      'summary': 'Event Summary',
-      'description': 'Event Description',
+   var eventDetails = {
+      'summary': document.getElementById('event-summary').value,
+      'description': document.getElementById('event-description').value,
       'start': {
-        'dateTime': '2023-08-28T10:00:00',
-        'timeZone': 'CEST'
+         'dateTime': new Date(document.getElementById('start-date').value).toISOString(),
+         'timeZone': 'YOUR_TIMEZONE'
       },
       'end': {
-        'dateTime': '2023-08-28T12:00:00',
-        'timeZone': 'CEST'
+         'dateTime': new Date(document.getElementById('end-date').value).toISOString(),
+         'timeZone': 'YOUR_TIMEZONE'
       }
-    };
+   };
 
-    gapi.client.calendar.events.insert({
+   gapi.client.calendar.events.insert({
       'calendarId': 'primary',
-      'resource': event
-    }).then(function(response) {
+      'resource': eventDetails
+   }).then(function(response) {
       console.log('Event created: ' + response.result.htmlLink);
-    });
-  }
+   });
+}
+
 
 
         function updateClock() {
