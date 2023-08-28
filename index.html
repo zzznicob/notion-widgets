@@ -111,10 +111,7 @@
           document.getElementById('authorize_button').innerText = 'Refresh';
           await listUpcomingEvents();
 
-          gapi.auth2.getAuthInstance().signIn().then(function () {
-      createEventButton.style.display = 'block'; // Show the button after authorization
-      createEventButton.onclick = createEvent;
-   });
+        
         };
 
         if (gapi.client.getToken() === null) {
