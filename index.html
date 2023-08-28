@@ -184,37 +184,40 @@
    });
 }
 
-function handleCreateEventClick() {
-   gapi.auth2.getAuthInstance().then(createEvent);
-}
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+      document.getElementById('create-event-button').style.display = 'block';
+      document.getElementById('create-event-button').addEventListener('click', createEvent);
+    }
+  }
 
-function createEvent() {
-   var eventDetails = {
-      'summary': document.getElementById('event-summary').value,
-      'description': document.getElementById('event-description').value,
+  function createEvent() {
+    var event = {
+      'summary': 'Event Summary',
+      'description': 'Event Description',
       'start': {
-         'dateTime': new Date(document.getElementById('start-date').value).toISOString(),
-         'timeZone': 'Europe/Madrid'
+        'dateTime': new Date().toISOString(),
+        'timeZone': 'YOUR_TIMEZONE'
       },
       'end': {
-         'dateTime': new Date(document.getElementById('end-date').value).toISOString(),
-         'timeZone': 'Europe/Madrid'
+        'dateTime': new Date().toISOString(),
+        'timeZone': 'YOUR_TIMEZONE'
       }
-   };
+    };
 
-   gapi.client.calendar.events.insert({
+    gapi.client.calendar.events.insert({
       'calendarId': 'primary',
-      'resource': eventDetails
-   }).then(function(response) {
+      'resource': event
+    }).then(function(response) {
       console.log('Event created: ' + response.result.htmlLink);
-   });
-}
+    });
+  }
 
 
         function updateClock() {
   const now = new Date();
   
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+  const options = { weekday: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'};
   const formattedDate = now.toLocaleDateString("en-US", options);
   
   document.getElementById('clock').textContent = formattedDate;
