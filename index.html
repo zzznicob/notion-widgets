@@ -185,7 +185,7 @@
 }
 
 function handleCreateEventClick() {
-   gapi.auth2.getAuthInstance().signIn().then(createEvent);
+   gapi.auth2.getAuthInstance().then(createEvent);
 }
 
 function createEvent() {
@@ -194,11 +194,11 @@ function createEvent() {
       'description': document.getElementById('event-description').value,
       'start': {
          'dateTime': new Date(document.getElementById('start-date').value).toISOString(),
-         'timeZone': 'YOUR_TIMEZONE'
+         'timeZone': 'Europe/Madrid'
       },
       'end': {
          'dateTime': new Date(document.getElementById('end-date').value).toISOString(),
-         'timeZone': 'YOUR_TIMEZONE'
+         'timeZone': 'Europe/Madrid'
       }
    };
 
