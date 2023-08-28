@@ -3,7 +3,11 @@
 body {
     background-color: rgb(105, 130, 178);
     font-family: 'Hanken Grotesk', sans-serif;
-    
+    align-items: center;
+}
+
+pre {
+    transition: 0.5s;
 }
 
 button {
