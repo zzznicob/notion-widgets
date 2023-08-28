@@ -155,39 +155,6 @@
         document.getElementById('content').innerText = output;
       }
 
-      // add event to calendar
-
-      // Refer to the JavaScript quickstart on how to setup the environment:
-// https://developers.google.com/calendar/quickstart/js
-// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-// stored credentials.
-
-const insertEvent = async (event) => {
-  try {
-    const response = await calendar.events.insert({
-      auth: auth,
-      calendarId: calendarId,
-      resource: event
-    })
-
-    if (response['status'] == 200 && response['statusText'] === ok) {
-      return "event added";
-    } else {
-      return "sad";
-    }
-  } catch (error) {
-    console.log('error at insertevent --> ${error}')
-  }
-};
-
-const request = gapi.client.calendar.events.insert({
-  'calendarId': 'primary',
-  'resource': event
-});
-
-request.execute(function(event) {
-  appendPre('Event created: ' + event.htmlLink);
-});
 
 
         function updateClock() {
