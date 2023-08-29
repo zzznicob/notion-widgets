@@ -5,31 +5,39 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <p>Upcoming events/tasks</p>
 
-    <div id="clock"></div>
+    <div class="flex">
+      <p id="title">Upcoming events/tasks</p>
+
+      <div class="styleclock" id="clock"><i class="fa-regular fa-clock"></i></div>
+      <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+      <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    </div>
+
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    
 
-    <label for="event-summary">Event Summary:</label>
-   <input type="text" id="event-summary" required><br><br>
+    <label style="visibility: hidden;" for="event-summary">Event Summary:</label>
+   <input style="visibility: hidden;" type="text" id="event-summary" required><br><br>
 
-   <label for="event-description">Event Description:</label>
-   <textarea id="event-description" rows="4"></textarea><br><br>
+   <label style="visibility: hidden;" for="event-description">Event Description:</label>
+   <textarea style="visibility: hidden;" id="event-description" rows="4"></textarea><br><br>
 
-   <label for="start-date">Start Date:</label>
-   <input type="datetime-local" id="start-date" required><br><br>
+   <label style="visibility: hidden;" for="start-date">Start Date:</label>
+   <input style="visibility: hidden;" type="datetime-local" id="start-date" required><br><br>
 
-   <label for="end-date">End Date:</label>
-   <input type="datetime-local" id="end-date" required><br><br>
+   <label style="visibility: hidden;" for="end-date">End Date:</label>
+   <input style="visibility: hidden;" type="datetime-local" id="end-date" required><br><br>
 
-    <button id="create-event-button" style="display: none;">Create Event</button>
+    <button style="visibility: hidden;" id="create-event-button" style="display: none;">Create Event</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
     
+
+
+    <script src="https://kit.fontawesome.com/e00711ebdc.js" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
