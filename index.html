@@ -156,7 +156,7 @@
         try {
           const request = {
             'calendarId': 'primary',
-            'timeMin': (new Date()).toLocaleTimeString('es-ES'),
+            'timeMin': (new Date()).toISOString(),
             'showDeleted': false,
             'singleEvents': true,
             'maxResults': 3,
