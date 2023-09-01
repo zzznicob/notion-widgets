@@ -3,8 +3,8 @@
 body {
     background-color: rgb(105, 130, 178);
     font-family: 'Hanken Grotesk', sans-serif;
-    align-items: center;
     display: flex;
+    justify-content: center;
 }
 
 pre {
@@ -46,5 +46,5 @@ button:hover {
 .flex {
     display: flex;
     width: 100%;
-    align-items: center;
+    justify-content: center;
 }

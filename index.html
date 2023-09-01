@@ -9,9 +9,11 @@
     <div class="flex">
       <p id="title">Upcoming events/tasks</p>
 
+      <div class="clockbuttonswrap">
       <div class="styleclock" id="clock"><i class="fa-regular fa-clock"></i></div>
       <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
       <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    </div>
     </div>
 
 
@@ -154,7 +156,7 @@
         try {
           const request = {
             'calendarId': 'primary',
-            'timeMin': (new Date()).toISOString(),
+            'timeMin': (new Date()).toLocaleTimeString('es-ES'),
             'showDeleted': false,
             'singleEvents': true,
             'maxResults': 3,
