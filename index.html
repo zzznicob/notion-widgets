@@ -21,6 +21,8 @@
         <div id="twrap">
       <p id="title" >Upcoming events/tasks</p></div>
 
+      <pre id="content" style="white-space: pre-wrap;"></pre>
+    </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     
@@ -39,7 +41,7 @@
 
     <button style="visibility: hidden;" id="create-event-button" style="display: none;">Create Event</button>
 
-    <pre id="content" style="white-space: pre-wrap;"></pre>
+   
 
     
 
@@ -187,7 +189,7 @@
         }
         // Flatten to string to display
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
+            (str, event) => `${str}${event.summary} (${event.start.dateTime})\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
