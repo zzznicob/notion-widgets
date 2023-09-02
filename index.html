@@ -16,7 +16,7 @@
     </div>
       
       <div class="clockwrap">
-      <div class="styleclock"><i class="fa-regular fa-clock"></i><h1 id="clock"></h1></div></div>
+      <div class="styleclock"><i id="icon" class="fa-regular fa-clock"></i><h1 id="clock"></h1></div></div>
       
         <div id="twrap">
       <p id="title" >Upcoming events/tasks</p></div>
@@ -75,7 +75,7 @@
       document.getElementById('signout_button').style.visibility = 'hidden';
       document.getElementById('title').style.visibility = 'hidden';
       document.getElementById('clock').style.visibility = 'hidden';
-
+      document.getElementById('icon').style.visibility = 'hidden';
       /**
        * Callback after api.js is loaded.
        */
@@ -133,6 +133,7 @@
           document.getElementById('authorize_button').innerText = 'Refresh';
           document.getElementById('title').style.visibility = 'visible';
           document.getElementById('clock').style.visibility = 'visible';
+          document.getElementById('icon').style.visibility = 'visible';
           await listUpcomingEvents();
         };
 
@@ -157,6 +158,9 @@
           document.getElementById('content').innerText = '';
           document.getElementById('authorize_button').innerText = 'Authorize';
           document.getElementById('signout_button').style.visibility = 'hidden';
+          document.getElementById('title').style.visibility = 'hidden';
+          document.getElementById('clock').style.visibility = 'hidden';
+          document.getElementById('icon').style.visibility = 'hidden';
         }
       }
 
