@@ -37,8 +37,9 @@ button:hover {
 
 }
 
-pre {
+#text {
     font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 10px;
 }
 
 .flex {
