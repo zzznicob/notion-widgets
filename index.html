@@ -21,7 +21,7 @@
         <div id="twrap">
       <p id="title" >Upcoming events/tasks</p></div>
 
-      <pre id="content" style="white-space: pre-wrap;"></pre>
+      <h2 id="content" style="white-space: pre-wrap;"></h2>
     </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
@@ -189,7 +189,7 @@
         }
         // Flatten to string to display
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} (${event.start.dateTime})\n`,
+            (str, event) => `${str}${event.summary} (${event.start})\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
