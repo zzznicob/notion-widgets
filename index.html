@@ -16,12 +16,12 @@
     </div>
       
       <div class="clockwrap">
-      <div class="styleclock"><i class="fa-regular fa-clock"><h1 id="clock"></h1></i></div></div>
+      <div class="styleclock"><i class="fa-regular fa-clock"></i><h1 id="clock"></h1></div></div>
       
         <div id="twrap">
       <p id="title" >Upcoming events/tasks</p></div>
 
-      <pre id="content" style="white-space: pre-wrap;"></pre>
+      <h2 id="content" style="white-space: pre-wrap;"></h2>
     </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
@@ -189,7 +189,7 @@
         }
         // Flatten to string to display
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} (${originalStartTime.dateTime})\n`,
+            (str, event) => `${str}${event.summary} (${start.dateTime})\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
