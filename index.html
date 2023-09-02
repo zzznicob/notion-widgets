@@ -6,12 +6,17 @@
   </head>
   <body>
 
-    <div class="flex">
+    <div class="welcome">
+      <h1>Welcome Nico!</h1>
+      <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+    </div>
+
+    <div class="flex" id="hidden" style="visibility: hidden;">
       <p id="title">Upcoming events/tasks</p>
 
       <div class="clockbuttonswrap">
       <div class="styleclock" id="clock"><i class="fa-regular fa-clock"></i></div>
-      <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+      
       <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
     </div>
     </div>
@@ -106,6 +111,7 @@
       function maybeEnableButtons() {
         if (gapiInited && gisInited) {
           document.getElementById('authorize_button').style.visibility = 'visible';
+          document.getElementById('hidden').style.visibility = 'visible';
         }
       }
 
