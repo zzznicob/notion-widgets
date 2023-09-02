@@ -189,7 +189,7 @@
         }
         // Flatten to string to display
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} (${event.start.dateTime})\n`,
+            (str, event) => `${str}${event.summary} (${originalStartTime.dateTime})\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
