@@ -113,8 +113,7 @@
       function maybeEnableButtons() {
         if (gapiInited && gisInited) {
           document.getElementById('authorize_button').style.visibility = 'visible';
-          document.getElementById('title').style.visibility = 'visible';
-      document.getElementById('clock').style.visibility = 'visible';
+          
         }
       }
 
@@ -128,6 +127,8 @@
           }
           document.getElementById('signout_button').style.visibility = 'visible';
           document.getElementById('authorize_button').innerText = 'Refresh';
+          document.getElementById('title').style.visibility = 'visible';
+          document.getElementById('clock').style.visibility = 'visible';
           await listUpcomingEvents();
         };
 
