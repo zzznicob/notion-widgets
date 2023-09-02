@@ -194,21 +194,11 @@
 
 
         // Flatten to string to display
-        const output = events.reduce((str, event) => {
-    // Assuming event.time is in ISO 8601 format
-    const eventTime = new Date(event.time);
-
-    // Get hours and minutes in HH:MM format
-    const hours = eventTime.getUTCHours();
-    const minutes = eventTime.getUTCMinutes();
-
-    // Format hours and minutes with leading zeros if needed
-    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-
-    return `${str}${event.summary} ${formattedTime}\n`;
-}, 'Events:\n');
-
-document.getElementById('content').innerText = output;
+        const output = events.reduce(
+            (str, event) => `${str}${event.summary} ${event.time}\n`,
+            'Events:\n');
+        document.getElementById('content').innerText = output;
+      }
 
       // add event
 
