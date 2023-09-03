@@ -197,10 +197,22 @@
 
 
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} ${event.start.timeZone}\n`,
-            'Events:\n');
-        document.getElementById('content').innerText = output;
-      }
+  (str, event) => {
+    const startTime = new Date(event.start.dateTime);
+    const endTime = new Date(event.end.dateTime);
+    
+    // Format start and end times as HH:MM
+    const startTimeFormatted = startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const endTimeFormatted = endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    
+    // Append event summary, formatted times, and time zone to the output string
+    return `${str}${event.summary} (${startTimeFormatted} - ${endTimeFormatted}) ${event.start.timeZone}\n`;
+  },
+  'Events:\n'
+);
+
+// Set the formatted output in the HTML element with the 'content' id
+document.getElementById('content').innerText = output;
 
       // add event
 
