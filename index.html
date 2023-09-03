@@ -71,21 +71,27 @@ var count = 0;
 function evtaddanim() {
   count++
 
-  if (count <= 1) {
+
   document.getElementById('expandable').className = 'expandanim';
   document.getElementById('bye').className = 'byebyebtn';
   
   document.getElementById('hide').style.visibility = 'visible';
-}
+
 }
 
 function closeevtadd() {
   count--
 
- console.log(count)
+
+  if (count >=0)  {
+    document.getElementById('expandable').className = 'closebox';
 }
 
+if (count >= 2) {
+  document.getElementById('closebtn').disabled = true;
+}
 
+}
 
 
       /* exported gapiLoaded */
