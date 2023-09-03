@@ -188,3 +188,26 @@ h2 {
   background: rgba(255,255,255,1);
   }
 }
+
+.byebyebtn {
+  animation: opacitybtnback 0.5s ease-out;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  
+}
+
+@keyframes opacitybtnback {
+  99.9% {
+    opacity: 1;
+    transform: scale(100%);
+    
+  }
+  100% {
+    transform: translateX(0%);  
+  }
+}
+
+.hibtn {
+
+}
