@@ -67,14 +67,25 @@
     <script type="text/javascript">
 
 function evtaddanim() {
+  count++
+
+  if (count >= 0) {
   document.getElementById('expandable').className = 'expandanim';
   document.getElementById('bye').className = 'byebyebtn';
   
   document.getElementById('hide').style.visibility = 'visible';
 }
+}
 
 function close() {
+  count--
+
+  if (count >= 1) {
+
+  
+
   document.getElementById('expandable').style.animation = 'addevtparamboxdown 0.5s ease-out forwards';
+}
 }
 
 
