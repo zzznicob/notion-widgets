@@ -22,24 +22,38 @@
       <p id="title" >Upcoming events/tasks</p></div>
 
       <h2 id="content" style="white-space: pre-wrap;"></h2>
+      
+      
+    <div class="centerevtaddbtn" id="bye">
+<button class="eventaddbtn" onclick="evtaddanim()">Add event</button>
+</div>
+      
+      <div class="expand" >
+        <div id="expandable">
+          
+          <div id="hide" style="visibility: hidden;">
+            
+            <button onclick="close()" id="closebtn"><i class="fa-solid fa-x"></i>asdad</button>
+            
+          <label for="event-summary">Event Summary:</label>
+   <input type="text" id="event-summary" required><br><br>
+
+   <label for="event-description">Event Description:</label>
+   <textarea id="event-description" rows="4"></textarea><br><br>
+
+   <label for="start-date">Start Date:</label>
+   <input type="datetime-local" id="start-date" required><br><br>
+
+   <label for="end-date">End Date:</label>
+   <input type="datetime-local" id="end-date" required><br><br>
+
+    <button id="create-event-button">Create Event</label>
+          </div>
+        </div>
+      </div>
+      
     </div>
 
-    <!--Add buttons to initiate auth sequence and sign out-->
-    
-
-    <label style="visibility: hidden;" for="event-summary">Event Summary:</label>
-   <input style="visibility: hidden;" type="text" id="event-summary" required><br><br>
-
-   <label style="visibility: hidden;" for="event-description">Event Description:</label>
-   <textarea style="visibility: hidden;" id="event-description" rows="4"></textarea><br><br>
-
-   <label style="visibility: hidden;" for="start-date">Start Date:</label>
-   <input style="visibility: hidden;" type="datetime-local" id="start-date" required><br><br>
-
-   <label style="visibility: hidden;" for="end-date">End Date:</label>
-   <input style="visibility: hidden;" type="datetime-local" id="end-date" required><br><br>
-
-    <button style="visibility: hidden;" id="create-event-button" style="display: none;">Create Event</button>
 
    
 
@@ -51,6 +65,21 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
     <script type="text/javascript">
+
+function evtaddanim() {
+  document.getElementById('expandable').className = 'expandanim';
+  document.getElementById('bye').className = 'byebyebtn';
+  
+  document.getElementById('hide').style.visibility = 'visible';
+}
+
+function close() {
+  document.getElementById('expandable').style.animation = 'addevtparamboxdown 0.5s ease-out forwards';
+}
+
+
+
+
       /* exported gapiLoaded */
       /* exported gisLoaded */
       /* exported handleAuthClick */
