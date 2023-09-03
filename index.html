@@ -197,7 +197,7 @@
 
 
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} ${event.dateTime}\n`,
+            (str, event) => `${str}${event.summary} ${event.start.timeZone}\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
