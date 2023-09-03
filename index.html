@@ -209,7 +209,7 @@
     const endTimeFormatted = endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     
     // Append event summary, formatted times, and time zone to the output string
-    return `${str}${event.summary} (${startTimeFormatted} - ${endTimeFormatted}) ${event.start.timeZone}\n`
+    return `${str}${event.summary} - ${startTimeFormatted} - ${endTimeFormatted}\n`
   },
   'Events:\n');
 
