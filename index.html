@@ -194,8 +194,10 @@
 
 
         // Flatten to string to display
+
+        const myJSON = JSON.stringify(start);
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} ${event.start}\n`,
+            (str, event) => `${str}${event.summary} ${event.myJSON}\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
