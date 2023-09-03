@@ -194,10 +194,8 @@
 
 
         // Flatten to string to display
-        const options2 = { hour: '2-digit', minute: '2-digit'};
-
         const output = events.reduce(
-            (str, event) => `${str}${event.summary} ${event.start.toLocaleDateString("en-US", options2)}\n`,
+            (str, event) => `${str}${event.summary} ${event.start.toISOString()}\n`,
             'Events:\n');
         document.getElementById('content').innerText = output;
       }
