@@ -22,36 +22,6 @@
       <p id="title" >Upcoming events/tasks</p></div>
 
       <h2 id="content" style="white-space: pre-wrap;"></h2>
-      
-      
-    <div class="centerevtaddbtn" id="bye">
-<button class="eventaddbtn" onclick="evtaddanim()">Add event</button>
-</div>
-      
-      <div class="expand" >
-        <div id="expandable">
-          
-          <div id="hide" style="visibility: hidden;">
-            
-            <button onclick="closeevtadd()" id="closebtn"><i class="fa-solid fa-x"></i></button>
-            
-          <label for="event-summary">Event Summary:</label>
-   <input type="text" id="event-summary" required><br><br>
-
-   <label for="event-description">Event Description:</label>
-   <textarea id="event-description" rows="4"></textarea><br><br>
-
-   <label for="start-date">Start Date:</label>
-   <input type="datetime-local" id="start-date" required><br><br>
-
-   <label for="end-date">End Date:</label>
-   <input type="datetime-local" id="end-date" required><br><br>
-
-    <button id="create-event-button">Create Event</label>
-          </div>
-        </div>
-      </div>
-      
     </div>
 
 
@@ -65,35 +35,6 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
     <script type="text/javascript">
-
-var count = 0;
-
-function evtaddanim() {
-  count++
-
-
-  document.getElementById('expandable').className = 'expandanim';
-  document.getElementById('bye').className = 'byebyebtn';
-  
-  document.getElementById('hide').style.visibility = 'visible';
-
-}
-
-function closeevtadd() {
-  count--
-
-
-  if (count >=0)  {
-    document.getElementById('expandable').className = 'closebox';
-    
-  document.getElementById('hide').style.visibility = 'hidden';
-  document.getElementById('bye').className = 'hibtn';
-}
-
-
-}
-
-
       /* exported gapiLoaded */
       /* exported gisLoaded */
       /* exported handleAuthClick */
