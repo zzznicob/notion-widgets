@@ -1,8 +1,14 @@
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&display=swap');
 
+  @font-face {
+    font-family: font;
+    src: url("zzznicob/notion-widgets/font.otf") format("opentype");
+}
+
+
 body {
     background-color: rgb(105, 130, 178);
-    font-family: 'Hanken Grotesk', sans-serif;
+    font-family: font;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
