@@ -8,7 +8,7 @@
 
 body {
     background-color: rgb(105, 130, 178);
-    font-family: font;
+    font-family: helvetica, sans-serif;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
