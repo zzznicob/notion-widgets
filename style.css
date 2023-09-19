@@ -47,7 +47,7 @@ button:hover {
   width: 388px;
   flex-direction: column;
   height: 430px;
-background: rgba(150,150,150,0.5);
+background: rgba(225,225,225,1);
 border: solid 2px black;
 border-radius: 20px;
 }
